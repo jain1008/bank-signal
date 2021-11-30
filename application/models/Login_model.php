@@ -21,7 +21,6 @@ class Login_model extends CI_Model
 		$this->db->from("users");
 		$this->db->where("user_email",$data['email']);
 		$this->db->where("user_password",sha1($data['password']));
-
 		$query = $this->db->get();
 
 		if($query->num_rows() > 0){
