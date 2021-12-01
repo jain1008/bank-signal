@@ -74,7 +74,6 @@ class Login extends CI_Controller
 				if ($row) // Data is in row set session
 				{
 					$this->session->set_userdata($row);
-
 					redirect('');
 				} else {
 
@@ -100,6 +99,8 @@ class Login extends CI_Controller
 		$this->session->unset_userdata("user_type");
 		$this->session->unset_userdata("user_name");
 		$this->session->unset_userdata("user_phone");
+		$this->session->unset_userdata("user_password");
+		$this->session->unset_userdata("user_status");
 		$this->session->unset_userdata("set_default_scheme");
 		redirect('');
 	}

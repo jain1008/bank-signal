@@ -38,6 +38,8 @@ class RManager_Dashboard extends CI_Controller
 		$this->session->unset_userdata("user_type");
 		$this->session->unset_userdata("user_name");
 		$this->session->unset_userdata("user_phone");
+		$this->session->unset_userdata("user_password");
+		$this->session->unset_userdata("user_status");
 		$this->session->unset_userdata("set_default_scheme");
 		redirect('');
 	}

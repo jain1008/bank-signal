@@ -46,35 +46,70 @@
 
 
 
-				<div class="col-12 col-lg-2">
-					<!--sidebar wrapper -->
-					<div class="sidebar-wrapper" data-simplebar="true">
+			<div class="col-12 col-lg-3">
+	 <!--sidebar wrapper -->
+		<div class="sidebar-wrapper" data-simplebar="true">
+	 
+			<!--navigation-->
+			<ul class="metismenu" id="menu">
+			
+             <div class="parent-icon" id="note"> Notifications <span class="note"> <i class="bx bx-message-square-edit"></i> </span>
+				 </div>
+						
+				 		
+				<li>
+					<a href="<?php echo base_url('Access'); ?>">
+						<div class="parent-icon"> <i class="bx bx-info-circle"></i>
+						</div>						 
+						<div class="menu-title"><span> </span> <br> <span class="heada"> Anomaly timeframe identified for Average loan amount : June 2007, July 2007, May 2008 - Aug 2008, Aug - Oct 2012 and in 2016 </span>  </div>
+					</a>
+				</li>
+				<li>
+					<a href="<?php echo base_url('Access'); ?>">
+						<div class="parent-icon"> <i class='bx bx-bookmark-heart'></i>
+						</div>						 
+						<div class="menu-title"><span> </span> <br> <span class="heada"> 70% of loans issued in A, B and C category in June 2007 and July 2007, vs Aug to Dec 2007, where more loans were issued in D - G category </span></div>
+					</a>
+				</li>
+				<li>
+					<a href="<?php echo base_url('Access'); ?>">
+						<div class="parent-icon"> <i class="bx bx-info-circle"></i>
+						</div>						 
+						<div class="menu-title"><span> </span> <br> <span class="heada"> Loan issued distribution is more between 640 - 680 during non-outlier month (Aug to Dec 2007) vs outlier months were the distribution is more in the range of 660 - 710 </span></div>
+					</a>
+				</li>
+				<li>
+					<a href="<?php echo base_url('Access'); ?>" class="has-arrow">
+						<div class="parent-icon">  <i class="bx bxs-check-circle"></i>
+						</div>						 
+						<div class="menu-title"><span> </span> <br> <span class="heada"> During outlier months in 2007, about 53% of loans were issued in credit card, other', education and home improvement categories, compared to non-outlier months </span> </div>
+					</a>
+				</li>
+				<li>
+					<a href="<?php echo base_url('Access'); ?>" class="has-arrow">
+						<div class="parent-icon"> <i class="bx bx-info-circle"></i>
+						</div>						 
+						<div class="menu-title"><span> </span> <br> <span class="heada"> In 2007, outlier months had more loans from NY, FL and MA compared to non-outlier period that is driven by NY and FL </span></div>
+					</a>
+				</li>				
+				<li>
+					<a href="<?php echo base_url('Login/logout'); ?>">
+						<div class="parent-icon"> <i class="bx bx-log-out"></i>
+						</div>						 
+						<div class="menu-title"><span class="heada"> Log-Out</span> </div>
+					</a>
+				</li>				
+			 
+			 
+ 
+			</ul>
+			<!--end navigation-->
+		</div>
+		<!--end sidebar wrapper -->
+				 </div>
 
-						<div class="leftt">
-							<div class="bre" style="font-size: 28px;"> Single <br>Finder</div>
 
-						</div>
-
-						<div class="bottomm">
-							<div class="bre"> Current <br> Timeframe</div>
-							<a class="nav-link" id="tabo" href="#">As of June 2021 </a>
-						</div>
-
-						<div class="bottomm">
-							<div class="bre"> Choose <br>previous</br> signals</div>
-							<a class="nav-link" id="tabo" href="#">As of XXX </a>
-						</div>
-
-						<div class="bottomm">
-							<div class="bre"><i class="bx bx-log-out"></i> <span style="cursor: pointer;" onclick="location.href='<?php echo base_url('Login/logout'); ?>'">Logout</span></div>
-						</div>
-
-					</div>
-					<!--end sidebar wrapper -->
-				</div>
-
-
-				<div class="col-12 col-lg-10">
+				<div class="col-12 col-lg-9">
 					<div class="row">
 
 						<div class="col-12 col-lg-12">
@@ -156,7 +191,7 @@
 							        foreach ($user_access as $value) {?>
 
 										<div class="tab-pane fade show <?php if($i==1){echo "active";$i++;} ?>" id="<?php echo $value['access_tab']; ?>" role="tabpanel">
-											<div class="row">
+											<!-- <div class="row">
 												<div class="col-md-6 col-12 col-lg-7">
 
 													<div class="row">
@@ -208,7 +243,7 @@
 													</div>
 												</div>
 
-											</div>
+											</div> -->
 
 
 											<div class="card">
@@ -222,6 +257,7 @@
 															<button type="button" class="btn bg-primary px-5" onclick="default_noti()" style="width:100%"> <?php echo $value['tab_name']; ?> </button>
 															<div class="card-body">
 																<iframe height="520px" width="100%" src="<?php echo base_url(''); ?>assets/admin_assets/<?php if($value['tab_name']=='Loan Amount'){echo "cluster";}else{echo "cluster_ir";} ?>.html"></iframe>
+																<button type="button" class="btn btn-success px-5" onclick="location.href='<?php echo base_url('realtionship_manager/RManager_Dashboard/casual/1'); ?>'">Understand Causal</button>
 															</div>
 														</div>
 													</div>
@@ -242,7 +278,7 @@
 							    <?php     }
 								}else{?>
 									<div class="tab-pane fade show active" id="primaryhome" role="tabpanel">
-										<div class="row">
+										<!-- <div class="row">
 											<div class="col-md-6 col-12 col-lg-7">
 
 												<div class="row">
@@ -294,7 +330,7 @@
 												</div>
 											</div>
 
-										</div>
+										</div> -->
 
 
 										<div class="card">
@@ -325,7 +361,7 @@
 										</div>
 									</div>
 									<div class="tab-pane" id="primaryprofile" role="tabpanel">
-										<div class="row">
+										<!-- <div class="row">
 											<div class="col-md-6 col-12 col-lg-7">
 
 												<div class="row">
@@ -377,7 +413,7 @@
 												</div>
 											</div>
 
-										</div>
+										</div> -->
 
 
 										<div class="card">

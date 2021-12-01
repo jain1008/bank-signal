@@ -55,46 +55,40 @@
 						
 				 		
 				<li>
+					<a href="<?php echo base_url('Access'); ?>">
+						<div class="parent-icon"> <i class="bx bx-info-circle"></i>
+						</div>						 
+						<div class="menu-title"><span> </span> <br> <span class="heada"> Anomaly timeframe identified for Average loan amount : June 2007, July 2007, May 2008 - Aug 2008, Aug - Oct 2012 and in 2016 </span>  </div>
+					</a>
+				</li>
+				<li>
+					<a href="<?php echo base_url('Access'); ?>">
+						<div class="parent-icon"> <i class='bx bx-bookmark-heart'></i>
+						</div>						 
+						<div class="menu-title"><span> </span> <br> <span class="heada"> 70% of loans issued in A, B and C category in June 2007 and July 2007, vs Aug to Dec 2007, where more loans were issued in D - G category </span></div>
+					</a>
+				</li>
+				<li>
+					<a href="<?php echo base_url('Access'); ?>">
+						<div class="parent-icon"> <i class="bx bx-info-circle"></i>
+						</div>						 
+						<div class="menu-title"><span> </span> <br> <span class="heada"> Loan issued distribution is more between 640 - 680 during non-outlier month (Aug to Dec 2007) vs outlier months were the distribution is more in the range of 660 - 710 </span></div>
+					</a>
+				</li>
+				<li>
+					<a href="<?php echo base_url('Access'); ?>" class="has-arrow">
+						<div class="parent-icon">  <i class="bx bxs-check-circle"></i>
+						</div>						 
+						<div class="menu-title"><span> </span> <br> <span class="heada"> During outlier months in 2007, about 53% of loans were issued in credit card, other', education and home improvement categories, compared to non-outlier months </span> </div>
+					</a>
+				</li>
+				<li>
 					<a href="<?php echo base_url('Access'); ?>" class="has-arrow">
 						<div class="parent-icon"> <i class="bx bx-info-circle"></i>
 						</div>						 
-						<div class="menu-title"><span> </span> <br> <span class="heada"> Access </span>  <br>  10.2.3030   </div>
+						<div class="menu-title"><span> </span> <br> <span class="heada"> In 2007, outlier months had more loans from NY, FL and MA compared to non-outlier period that is driven by NY and FL </span></div>
 					</a>
-				</li>
-				<li>
-					<a href="realtionship_manager.html" class="has-arrow">
-						<div class="parent-icon"> <i class="bx bx-info-circle"></i>
-						</div>						 
-						<div class="menu-title"><span> ahdbkbk  </span> <br> <span class="heada"> Risk Assessment Report </span>  <br>  10.2.3030   </div>
-					</a>
-				</li>
-				
-				<li>
-					<a href="realtionship_manager.html" class="has-arrow">
-						<div class="parent-icon"> <i class="bx bxs-check-circle"></i>
-						</div>
-				 <div class="menu-title"><span> ahdbkbk  </span> <br> <span class="heada">Credit Line Report </span>  <br> 1.33.2020  </div>
-					 
-					</a>
-				</li>
-			 
-				<li>
-					<a class="has-arrow" href="realtionship_manager.html">
-						<div class="parent-icon"><i class='bx bx-bookmark-heart'></i>
-						</div>
-						 <div class="menu-title"><span> ahdbkbk  </span> <br> <span class="heada"> Argus Team Follow Up </span>  <br> 1.33.2020  </div>
-						 
-					</a>
-				</li>
-			 
- 				<li>
-					<a href="javascript:;" class="has-arrow">
-						<div class="parent-icon"> <i class="bx bx-info-circle"></i>
-						</div>						 
-						<div class="menu-title"><span> ahdbkbk  </span> <br> <span class="heada"> Risk Assessment Report </span>  <br>  10.2.3030   </div>
-					</a>
-				</li>
-				
+				</li>				
 				<li>
 					<a href="<?php echo base_url('Login/logout'); ?>">
 						<div class="parent-icon"> <i class="bx bx-log-out"></i>
