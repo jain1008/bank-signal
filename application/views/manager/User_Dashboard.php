@@ -55,38 +55,31 @@
 						
 				 		
 				<li>
-					<a href="<?php echo base_url('Access'); ?>">
+					<a href="<?php echo base_url('Access/1'); ?>">
 						<div class="parent-icon"> <i class="bx bx-info-circle"></i>
 						</div>						 
-						<div class="menu-title"><span> </span> <br> <span class="heada"> Anomaly timeframe identified for Average loan amount : June 2007, July 2007, May 2008 - Aug 2008, Aug - Oct 2012 and in 2016 </span>  </div>
+						<div class="menu-title"><span> </span> <br> <span class="heada">  2007 Loan amount anomaly in June and July : More loans were issued in the FICO score segment 640 to 680 during the anomaly months compared to non-anomaly months [High] </span>  </div>
 					</a>
 				</li>
 				<li>
-					<a href="<?php echo base_url('Access'); ?>">
+					<a href="<?php echo base_url('Access/1'); ?>">
 						<div class="parent-icon"> <i class='bx bx-bookmark-heart'></i>
 						</div>						 
-						<div class="menu-title"><span> </span> <br> <span class="heada"> 70% of loans issued in A, B and C category in June 2007 and July 2007, vs Aug to Dec 2007, where more loans were issued in D - G category </span></div>
+						<div class="menu-title"><span> </span> <br> <span class="heada"> 2007 Loan amount anomaly in June and July : More loans were issued in the category A,B, C during the anomaly months compared to non-anomaly months [Medium]  </span></div>
 					</a>
 				</li>
 				<li>
-					<a href="<?php echo base_url('Access'); ?>">
+					<a href="<?php echo base_url('Access/1'); ?>">
 						<div class="parent-icon"> <i class="bx bx-info-circle"></i>
 						</div>						 
-						<div class="menu-title"><span> </span> <br> <span class="heada"> Loan issued distribution is more between 640 - 680 during non-outlier month (Aug to Dec 2007) vs outlier months were the distribution is more in the range of 660 - 710 </span></div>
+						<div class="menu-title"><span> </span> <br> <span class="heada"> 2008 Loan amount anomaly from May to Sep : No loans were issued for small business during this time period [Medium] </span></div>
 					</a>
 				</li>
 				<li>
-					<a href="<?php echo base_url('Access'); ?>" class="has-arrow">
+					<a href="<?php echo base_url('Access/2'); ?>" class="has-arrow">
 						<div class="parent-icon">  <i class="bx bxs-check-circle"></i>
 						</div>						 
-						<div class="menu-title"><span> </span> <br> <span class="heada"> During outlier months in 2007, about 53% of loans were issued in credit card, other', education and home improvement categories, compared to non-outlier months </span> </div>
-					</a>
-				</li>
-				<li>
-					<a href="<?php echo base_url('Access'); ?>" class="has-arrow">
-						<div class="parent-icon"> <i class="bx bx-info-circle"></i>
-						</div>						 
-						<div class="menu-title"><span> </span> <br> <span class="heada"> In 2007, outlier months had more loans from NY, FL and MA compared to non-outlier period that is driven by NY and FL </span></div>
+						<div class="menu-title"><span> </span> <br> <span class="heada"> 2013 Interest rate anomaly : More loans were issued for lower FICO score segments 660 to 680 compared to other non-anomaly years [Low] </span> </div>
 					</a>
 				</li>				
 				<li>
@@ -178,7 +171,7 @@
                      <div class="card">
 					 <div class="row">								
 					  <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3" style="padding:5px 24px">
-					    <div class="breadcrumb pe-3">Wallet Share </div>
+					    <div class="breadcrumb pe-3">Signals </div>
 					    <div class="ps-3">
 						 </div>
 					       <div class="ms-auto">
@@ -197,9 +190,8 @@
 								  </div>
 								  <div class="col-md-7">
 									<div class="card-body">
-									   <p class="para"> you make </p>
-									  <h5 class="card123"> Yes, if you make it look like an electrical fire. When you do things right, people won't be sure you've done anything at all. </h5>
-									  <p class="para"> 03.05.2021 </p>
+									   <p class="para"> 2007 Loan amount anomaly in June and July : More loans were issued in the FICO score segment 640 to 680 during the anomaly months compared to non-anomaly months [ Score : 0.96] </p>
+									  <p class="para"> <?php echo date("d.m.Y") ?></p>
 									 
 									</div>
 								  </div>
@@ -222,9 +214,8 @@
 								  </div>
 								  <div class="col-md-7">
 									<div class="card-body">
-									   <p class="para"> you make </p>
-									  <h5 class="card123"> Yes, if you make it look like an electrical fire. When you do things right, people won't be sure you've done anything at all. </h5>
-									  <p class="para"> 03.05.2021 </p>
+									   <p class="para">2007 Loan amount anomaly in June and July : More loans were issued in the category A,B, C during the anomaly months compared to non-anomaly months [ Score : 0.84]  </p>
+									  <p class="para"> <?php echo date("d.m.Y",strtotime(' -1 day')); ?> </p>
 									 
 									</div>
 								  </div>
@@ -238,30 +229,6 @@
 								</div>
 
 
-                          <div class="row">								
-                           
-								 <div class="col-md-2">
-								  <div class="text-white ms-auto" style="padding-top: 30px;">
-								   <div class="widgets-icons rounded-circle mx-auto bg-light-danger text-danger mb-3"> 
-									  </div>
-									  </div>
-								  </div>
-								  <div class="col-md-7">
-									<div class="card-body">
-									   <p class="para"> you make </p>
-									  <h5 class="card123"> Yes, if you make it look like an electrical fire. When you do things right, people won't be sure you've done anything at all. </h5>
-									  <p class="para"> 03.05.2021 </p>
-									 
-									</div>
-								  </div>
-
-								 <div class="col-md-3">
-								 <div class="bca" style="padding-top: 50px;">
-								  <a href="#" class="cardlink"> Learn More </a>
-								  </div>
-                                    </div>								  
-								  
-								</div>								
 								  
 								</div>
 							  </div>

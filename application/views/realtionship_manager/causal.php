@@ -46,37 +46,37 @@
 			<div class="row">
 
 
-				<div class="col-12 col-lg-3">
+<!--				<div class="col-12 col-lg-3">-->
 					<!--sidebar wrapper -->
-					<div class="sidebar-wrapper" data-simplebar="true">
-
-
-						<h3 style="text-align: center;padding-top: 5px;;"><?php echo $type; ?></h3>
-						<iframe height="520px" width="100%" src="<?php echo base_url(''); ?>assets/admin_assets/cluster.html"></iframe>
-
-					</div>
+<!--					<div class="sidebar-wrapper" data-simplebar="true">-->
+<!---->
+<!---->
+<!--						<h3 style="text-align: center;padding-top: 5px;;">--><?php //echo $type; ?><!--</h3>-->
+<!--						<iframe height="520px" width="100%" src="--><?php //echo base_url(''); ?><!--assets/admin_assets/cluster.html"></iframe>-->
+<!---->
+<!--					</div>-->
 					<!--end sidebar wrapper -->
-				</div>
+<!--				</div>-->
 
 
-				<div class="col-12 col-lg-9">
+				<div class="col-12 col-lg-12">
 					<div class="row">
 
 						<div class="col-12 col-lg-6">
 							<div class="card radius-10" id="card1">
 								<div class="card-body" style="margin: 10px;background: #fff;">
-									
-									<iframe height="750px" width="100%" src="<?php echo base_url(''); ?>assets/admin_assets/fico_range_low_2.html"></iframe>
-									
-								</div>
-								<div class="card-body" style="margin: 10px;background: #fff;">
-									
-									<iframe height="750px" width="100%" src="<?php echo base_url(''); ?>assets/admin_assets/grade_1.html"></iframe>
+									<h3 style="text-align: center;padding-top: 2px;;">Key Influencers<?php //echo $type; ?></h3>
+									<iframe height="750px" width="100%" src="<?php echo base_url(''); ?>assets/admin_assets/2007_dashboard.html"></iframe>
 									
 								</div>
 								<div class="card-body" style="margin: 10px;background: #fff;">
 									
-									<iframe height="850px" width="100%" src="<?php echo base_url(''); ?>assets/admin_assets/purpose.html"></iframe>
+									<iframe height="750px" width="100%" src="<?php echo base_url(''); ?>assets/admin_assets/2008_dashboard.html"></iframe>
+									
+								</div>
+								<div class="card-body" style="margin: 10px;background: #fff;">
+									
+									<iframe height="850px" width="100%" src="<?php echo base_url(''); ?>assets/admin_assets/2012_dashboard.html"></iframe>
 									
 								</div>
 							</div>
@@ -87,16 +87,17 @@
 						<div class="col-12 col-lg-6">
 							<div class="card radius-10" id="card1">
 							<div class="card-body" style="margin: 10px;background: #fff;">
-									
-									<iframe height="750px" width="100%" src="<?php echo base_url(''); ?>assets/admin_assets/home_ownership.html"></iframe>
+									<h3 style="text-align: center;padding-top: 2px;;">Explainability<?php //echo $type; ?></h3>
+									<iframe height="750px" width="100%" src="<?php echo base_url(''); ?>assets/admin_assets/causal_dashboard_07.html"></iframe>
 									
 								</div>
 
 								<div class="card-body" style="margin: 10px;background: #fff;">
 									
-									<iframe height="950px" width="100%" src="<?php echo base_url(''); ?>assets/admin_assets/addr_state_1.html"></iframe>
+							    	<iframe height="750px" width="100%" src="<?php echo base_url(''); ?>assets/admin_assets/causal_dashboard_08.html"></iframe>
 									
 								</div>
+
 							</div>
 						</div>
 

@@ -70,7 +70,7 @@ class RManager_Dashboard extends CI_Controller
 		}
 		redirect("RM_Dashboard");
 	}
-	public function casual($type)
+	public function causal($type)
 	{
 		if ($type == 1) {
 			$data['type'] = 'Loan Amount';
@@ -78,7 +78,24 @@ class RManager_Dashboard extends CI_Controller
 			$data['type'] = 'Interest Rate';
 		}
 		$this->load->view('common/blocks/header');
+		if($type == 1){
 		$this->load->view('realtionship_manager/causal', $data);
+		}else{
+			$this->load->view('realtionship_manager/causal_ir', $data);
+		}
+		
 		$this->load->view('common/blocks/footer');
 	}
+
+	public function delete()
+	{
+		$tab_name = $this->input->post('tab_name');
+		$user_id = $this->input->post('user_id');
+
+		$this->db-> where('tab_name',$tab_name);
+		$this->db-> where('user_id',$user_id);
+    	$this->db->delete('user_access');
+		redirect("RM_Dashboard");
+	}
+
 }

@@ -51,10 +51,11 @@ class Manager_Dashboard extends CI_Controller
 		$this->load->view('manager/User_Dashboard');
 		$this->load->view('common/blocks/footer');
 	}
-	public function access()
+	public function access($tab='')
 	{
+		$data['tab'] = $tab;
 		$this->load->view('common/blocks/header');
-		$this->load->view('realtionship_manager/rm_dashboard');
+		$this->load->view('realtionship_manager/rm_dashboard',$data);
 		$this->load->view('common/blocks/footer');
 	}
 }

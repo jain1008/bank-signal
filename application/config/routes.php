@@ -62,7 +62,8 @@ $route['Login/logout'] 	       	       = 'Login/logout';
 
 //Manager
 $route['Manager_Dashboard'] 	     = 'manager/Manager_Dashboard/index';
-$route['Access'] 	     = 'manager/Manager_Dashboard/access';
+$route['Access/(:num)'] 	     = 'manager/Manager_Dashboard/access/$1';
+$route['Access_new'] 	     = 'manager/Manager_Dashboard/access';
 
 
 //Relationship Manager

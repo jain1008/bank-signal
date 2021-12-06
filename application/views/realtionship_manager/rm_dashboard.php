@@ -4,6 +4,17 @@
     $this->db->where("user_type", 1);
     $query = $this->db->get();
     $users = $query->result_array();
+	$tab_name = 'primaryhome';
+	if(isset($tab)){
+		if($tab==1){
+			$tab_name = 'primaryhome';
+		}else if($tab==2)
+		{
+			$tab_name = 'primaryprofile';
+		}else{
+			$tab_name = '';
+		}	
+	}
 ?>
 <!--start header -->
 <header>
@@ -58,38 +69,31 @@
 						
 				 		
 				<li>
-					<a href="<?php echo base_url('Access'); ?>">
+					<a href="<?php echo base_url('Access/1'); ?>">
 						<div class="parent-icon"> <i class="bx bx-info-circle"></i>
 						</div>						 
-						<div class="menu-title"><span> </span> <br> <span class="heada"> Anomaly timeframe identified for Average loan amount : June 2007, July 2007, May 2008 - Aug 2008, Aug - Oct 2012 and in 2016 </span>  </div>
+						<div class="menu-title"><span> </span> <br> <span class="heada">  2007 Loan amount anomaly in June and July : More loans were issued in the FICO score segment 640 to 680 during the anomaly months compared to non-anomaly months [High] </span>  </div>
 					</a>
 				</li>
 				<li>
-					<a href="<?php echo base_url('Access'); ?>">
+					<a href="<?php echo base_url('Access/1'); ?>">
 						<div class="parent-icon"> <i class='bx bx-bookmark-heart'></i>
 						</div>						 
-						<div class="menu-title"><span> </span> <br> <span class="heada"> 70% of loans issued in A, B and C category in June 2007 and July 2007, vs Aug to Dec 2007, where more loans were issued in D - G category </span></div>
+						<div class="menu-title"><span> </span> <br> <span class="heada"> 2007 Loan amount anomaly in June and July : More loans were issued in the category A,B, C during the anomaly months compared to non-anomaly months [Medium]  </span></div>
 					</a>
 				</li>
 				<li>
-					<a href="<?php echo base_url('Access'); ?>">
+					<a href="<?php echo base_url('Access/1'); ?>">
 						<div class="parent-icon"> <i class="bx bx-info-circle"></i>
 						</div>						 
-						<div class="menu-title"><span> </span> <br> <span class="heada"> Loan issued distribution is more between 640 - 680 during non-outlier month (Aug to Dec 2007) vs outlier months were the distribution is more in the range of 660 - 710 </span></div>
+						<div class="menu-title"><span> </span> <br> <span class="heada"> 2008 Loan amount anomaly from May to Sep : No loans were issued for small business during this time period [Medium] </span></div>
 					</a>
 				</li>
 				<li>
-					<a href="<?php echo base_url('Access'); ?>" class="has-arrow">
+					<a href="<?php echo base_url('Access/2'); ?>" class="has-arrow">
 						<div class="parent-icon">  <i class="bx bxs-check-circle"></i>
 						</div>						 
-						<div class="menu-title"><span> </span> <br> <span class="heada"> During outlier months in 2007, about 53% of loans were issued in credit card, other', education and home improvement categories, compared to non-outlier months </span> </div>
-					</a>
-				</li>
-				<li>
-					<a href="<?php echo base_url('Access'); ?>" class="has-arrow">
-						<div class="parent-icon"> <i class="bx bx-info-circle"></i>
-						</div>						 
-						<div class="menu-title"><span> </span> <br> <span class="heada"> In 2007, outlier months had more loans from NY, FL and MA compared to non-outlier period that is driven by NY and FL </span></div>
+						<div class="menu-title"><span> </span> <br> <span class="heada"> 2013 Interest rate anomaly : More loans were issued for lower FICO score segments 660 to 680 compared to other non-anomaly years [Low] </span> </div>
 					</a>
 				</li>				
 				<li>
@@ -133,7 +137,7 @@
 											        $i=1;
 											        foreach ($user_access as $value) {?>
 											        	<li class="nav-item" role="presentation">
-														<a class="nav-link <?php if($i==1){echo "active";$i++;} ?>" data-bs-toggle="tab" href="#<?php echo $value['access_tab']; ?>" role="tab" aria-selected="true">
+														<a class="nav-link <?php if($tab_name==$value['access_tab']){echo "active";$i++;} ?>" data-bs-toggle="tab" href="#<?php echo $value['access_tab']; ?>" role="tab" aria-selected="true">
 															<div class="col">
 																<button type="button" class="btn bg-primary px-5"> <?php echo $value['tab_name']; ?> </button>
 															</div>
@@ -142,14 +146,14 @@
 											    <?php     }
 												}else{?>
 													<li class="nav-item" role="presentation">
-														<a class="nav-link active" data-bs-toggle="tab" href="#primaryhome" role="tab" aria-selected="true">
+														<a class="nav-link <?php if($tab_name=='primaryhome'){echo "active";} ?>" data-bs-toggle="tab" href="#primaryhome" role="tab" aria-selected="true">
 															<div class="col">
 																<button type="button" class="btn bg-primary px-5"> Loan Amount </button>
 															</div>
 														</a>
 													</li>
 													<li class="nav-item" role="presentation">
-														<a class="nav-link" data-bs-toggle="tab" href="#primaryprofile" role="tab" aria-selected="false">
+														<a class="nav-link <?php if($tab_name=='primaryprofile'){echo "active";} ?>" data-bs-toggle="tab" href="#primaryprofile" role="tab" aria-selected="false">
 															<div class="col">
 																<button type="button" class="btn bg-primary px-5"> Interest Rate </button>
 															</div>
@@ -190,7 +194,7 @@
 							        $i=1;
 							        foreach ($user_access as $value) {?>
 
-										<div class="tab-pane fade show <?php if($i==1){echo "active";$i++;} ?>" id="<?php echo $value['access_tab']; ?>" role="tabpanel">
+										<div class="tab-pane fade show <?php if($tab_name == $value['access_tab']) echo "active"; ?>" id="<?php echo $value['access_tab']; ?>" role="tabpanel">
 											<!-- <div class="row">
 												<div class="col-md-6 col-12 col-lg-7">
 
@@ -248,7 +252,7 @@
 
 											<div class="card">
 												<div class="breadcrumb pe-3">
-													<h6 class="mb-0" id="hed"> Pick the signal and publish </h6>
+													<h6 class="mb-0" id="hed"> View Signals </h6>
 												</div>
 
 												<div class="card-body">
@@ -256,8 +260,8 @@
 														<div class="col-12">
 															<button type="button" class="btn bg-primary px-5" onclick="default_noti()" style="width:100%"> <?php echo $value['tab_name']; ?> </button>
 															<div class="card-body">
-																<iframe height="520px" width="100%" src="<?php echo base_url(''); ?>assets/admin_assets/<?php if($value['tab_name']=='Loan Amount'){echo "cluster";}else{echo "cluster_ir";} ?>.html"></iframe>
-																<button type="button" class="btn btn-success px-5" onclick="location.href='<?php echo base_url('realtionship_manager/RManager_Dashboard/casual/1'); ?>'">Understand Causal</button>
+																<iframe height="520px" width="100%" src="<?php echo base_url(''); ?>assets/admin_assets/<?php if($value['tab_name']=='Loan Amount'){$page_no=1;echo "timeseries_dashboard";}else{$page_no=2;echo "int_rate_anomalies";} ?>.html"></iframe>
+																<button type="button" class="btn btn-success px-5" onclick="location.href='<?php echo base_url('realtionship_manager/RManager_Dashboard/causal/'.$page_no); ?>'">Understand Causal</button>
 															</div>
 														</div>
 													</div>
@@ -277,7 +281,7 @@
 
 							    <?php     }
 								}else{?>
-									<div class="tab-pane fade show active" id="primaryhome" role="tabpanel">
+									<div class="tab-pane fade show <?php if($tab_name=='primaryhome'){echo "active";} ?>" id="primaryhome" role="tabpanel">
 										<!-- <div class="row">
 											<div class="col-md-6 col-12 col-lg-7">
 
@@ -335,7 +339,7 @@
 
 										<div class="card">
 											<div class="breadcrumb pe-3">
-												<h6 class="mb-0" id="hed"> Pick the signal and publish </h6>
+												<h6 class="mb-0" id="hed"> View Signals </h6>
 											</div>
 
 											<div class="card-body">
@@ -343,9 +347,10 @@
 													<div class="col-12">
 														<button type="button" class="btn bg-primary px-5" onclick="default_noti()" style="width:100%"> Loan Amount </button>
 														<div class="card-body">
-															<iframe height="520px" width="100%" src="<?php echo base_url(''); ?>assets/admin_assets/cluster.html"></iframe>
+															<iframe height="520px" width="100%" src="<?php echo base_url(''); ?>assets/admin_assets/timeseries_dashboard.html"></iframe>
 															<button type="button" class="btn btn-primary px-5" data-bs-toggle="modal" data-bs-target="#exampleLargeModal">Publish</button>
-															<button type="button" class="btn btn-success px-5" onclick="location.href='<?php echo base_url('realtionship_manager/RManager_Dashboard/casual/1'); ?>'">Understand Causal</button>
+															<button type="button" class="btn btn-primary px-5" data-bs-toggle="modal" data-bs-target="#exampleLargeModal3">Un-Publish</button>
+															<button type="button" class="btn btn-success px-5" onclick="location.href='<?php echo base_url('realtionship_manager/RManager_Dashboard/causal/1'); ?>'">Understand Causal</button>
 														</div>
 													</div>
 												</div>
@@ -360,7 +365,7 @@
 											</div>
 										</div>
 									</div>
-									<div class="tab-pane" id="primaryprofile" role="tabpanel">
+									<div class="tab-pane <?php if($tab_name=='primaryprofile'){echo "active";} ?>" id="primaryprofile" role="tabpanel">
 										<!-- <div class="row">
 											<div class="col-md-6 col-12 col-lg-7">
 
@@ -418,7 +423,7 @@
 
 										<div class="card">
 											<div class="breadcrumb pe-3">
-												<h6 class="mb-0" id="hed"> Pick the signal and publish </h6>
+												<h6 class="mb-0" id="hed"> View Signals </h6>
 											</div>
 
 											<div class="card-body">
@@ -426,9 +431,10 @@
 													<div class="col-12">
 														<button type="button" class="btn bg-primary px-5" onclick="default_noti()" style="width:100%"> Interest Rate </button>
 														<div class="card-body">
-															<iframe height="520px" width="100%" src="<?php echo base_url(''); ?>assets/admin_assets/cluster_ir.html"></iframe>
+															<iframe height="520px" width="100%" src="<?php echo base_url(''); ?>assets/admin_assets/int_rate_anomalies.html"></iframe>
 															<button type="button" class="btn btn-primary px-5" data-bs-toggle="modal" data-bs-target="#exampleLargeModal2">Publish</button>
-															<button type="button" class="btn btn-success px-5" onclick="location.href='<?php echo base_url('realtionship_manager/RManager_Dashboard/casual/2'); ?>'">Understand Causal</button>
+															<button type="button" class="btn btn-primary px-5" data-bs-toggle="modal" data-bs-target="#exampleLargeModal4">Un-Publish</button>
+															<button type="button" class="btn btn-success px-5" onclick="location.href='<?php echo base_url('realtionship_manager/RManager_Dashboard/causal/2'); ?>'">Understand Causal</button>
 														</div>
 													</div>
 												</div>
@@ -529,6 +535,92 @@
 														</div>										
 													</div>
 												</div>												
+											</div>
+											<div class="login-buttonblock mt-4">
+												<button class="btn btn-info px-5" type="submit">Save</button>
+												<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+											</div>
+										</div>
+
+									</form>
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col">
+					<!-- Modal -->
+					<div class="modal fade" id="exampleLargeModal3" tabindex="-1" aria-hidden="true">
+						<div class="modal-dialog modal-lg">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h5 class="modal-title">UnPublish</h5>
+									<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+								</div>
+								<div class="modal-body">
+									<form action="<?php echo base_url('realtionship_manager/RManager_Dashboard/delete'); ?>" method="post" class="noform">
+
+										<div class="tab-content">
+											<div class="row">
+												<div class="col-sm-6">
+													<div class="form-group row">
+														<label class="modal_label col-sm-3 col-form-label">Email *</label>
+														<div class="col-sm-7">
+															<select class="form-control" name="user_id" id="exampleFormControlSelect1">
+																<?php foreach ($users as $value) {?>
+																	<option value="<?php echo $value['user_id']; ?>"><?php echo $value['user_email']; ?></option>
+																<?php }?>
+															</select>
+															<input name="user_password" value="123" type="hidden">
+															<input name="access_tab" value="primaryhome" type="hidden">
+															<input name="tab_name" value="Loan Amount" type="hidden">
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="login-buttonblock mt-4">
+												<button class="btn btn-info px-5" type="submit">Save</button>
+												<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+											</div>
+										</div>
+
+									</form>
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col">
+					<!-- Modal -->
+					<div class="modal fade" id="exampleLargeModal4" tabindex="-1" aria-hidden="true">
+						<div class="modal-dialog modal-lg">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h5 class="modal-title">UnPublish</h5>
+									<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+								</div>
+								<div class="modal-body">
+									<form action="<?php echo base_url('realtionship_manager/RManager_Dashboard/delete'); ?>" method="post" class="noform">
+
+										<div class="tab-content">
+											<div class="row">
+												<div class="col-sm-6">
+													<div class="form-group row">
+														<label class="modal_label col-sm-3 col-form-label">Email *</label>
+														<div class="col-sm-7">
+															<select class="form-control" name="user_id" id="exampleFormControlSelect1">
+																<?php foreach ($users as $value) {?>
+																	<option value="<?php echo $value['user_id']; ?>"><?php echo $value['user_email']; ?></option>
+																<?php }?>
+															</select>
+															<input name="user_password" value="123" type="hidden">
+															<input name="access_tab" value="primaryprofile" type="hidden">
+															<input name="tab_name" value="Interest Rate" type="hidden">
+														</div>
+													</div>
+												</div>
 											</div>
 											<div class="login-buttonblock mt-4">
 												<button class="btn btn-info px-5" type="submit">Save</button>
